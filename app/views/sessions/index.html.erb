@@ -1,0 +1,9 @@
+<% if current_user %>
+  Welcome <%= current_user.name %>
+  <lu>
+  	<li><%= link_to "ツイート", messages_path %></li> 
+	  <li><%= link_to "サインアウト", '/signout', method: :destroy %></li> 
+	 </lu>
+<% else %>
+  <%= link_to "サインイン with Twitter", "/auth/twitter" %> 
+<% end %>
